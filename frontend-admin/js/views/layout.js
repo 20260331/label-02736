@@ -61,6 +61,15 @@ export class LayoutView {
                             </span>
                             班级管理
                         </a>
+                        <a class="nav-item ${route.startsWith('grades') ? 'active' : ''}" href="#/grades">
+                            <span class="nav-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 11l3 3L22 4"/>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                </svg>
+                            </span>
+                            成绩管理
+                        </a>
                     </div>
                     
                     <div class="nav-footer">
@@ -146,6 +155,20 @@ export class LayoutView {
             'classes': [
                 { text: '首页', href: '#/dashboard' },
                 { text: '班级管理', active: true }
+            ],
+            'grades': [
+                { text: '首页', href: '#/dashboard' },
+                { text: '成绩管理', active: true }
+            ],
+            'grades/add': [
+                { text: '首页', href: '#/dashboard' },
+                { text: '成绩管理', href: '#/grades' },
+                { text: '录入成绩', active: true }
+            ],
+            'grades/edit': [
+                { text: '首页', href: '#/dashboard' },
+                { text: '成绩管理', href: '#/grades' },
+                { text: '编辑成绩', active: true }
             ]
         };
 
@@ -153,6 +176,9 @@ export class LayoutView {
         let key = route;
         if (route.startsWith('students/edit/')) {
             key = 'students/edit';
+        }
+        if (route.startsWith('grades/edit/')) {
+            key = 'grades/edit';
         }
 
         const items = breadcrumbs[key] || breadcrumbs['dashboard'];

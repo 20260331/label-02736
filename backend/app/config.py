@@ -21,6 +21,7 @@ class Config:
     USERS_FILE = os.path.join(DATA_DIR, 'users.xlsx')
     LOGS_FILE = os.path.join(DATA_DIR, 'operation_logs.xlsx')
     CLASSES_FILE = os.path.join(DATA_DIR, 'classes.xlsx')
+    GRADES_FILE = os.path.join(DATA_DIR, 'grades.xlsx')
     
     # 日志配置
     LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs')
