@@ -460,3 +460,111 @@
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* 成绩徽章 */
+.score-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-right: 8px;
+}
+
+.score-badge.pass {
+    background: rgba(54, 179, 126, 0.1);
+    color: #36B37E;
+}
+
+.score-badge.fail {
+    background: rgba(255, 86, 48, 0.1);
+    color: #FF5630;
+}
+
+/* 数据来源徽章 */
+.source-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 10px;
+    background: rgba(107, 119, 140, 0.1);
+    color: #6B778C;
+}
+
+.text-muted {
+    color: #6B778C;
+}
+
+/* 统计行 */
+.statistics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #6B778C;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #172B4D;
+}
+
+.stat-desc {
+    font-size: 12px;
+    color: #6B778C;
+    margin-top: 2px;
+}
+
+.stat-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #172B4D;
+    margin-bottom: 16px;
+}
+
+/* 筛选组 */
+.filter-group {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+
+/* 工具栏 */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.toolbar-left,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
