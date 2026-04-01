@@ -66,6 +66,48 @@ def init_sample_students():
     logger.info(f'Initialized {len(sample_students)} sample students')
 
 
+def init_sample_grades():
+    """初始化示例成绩数据"""
+    from app.mappers.grade_mapper import grade_mapper
+    from app.entity.grade import Grade
+    
+    # 如果已有成绩数据则跳过
+    if grade_mapper.count() > 0:
+        logger.info('Grade data already exists, skipping sample data initialization')
+        return
+    
+    # 示例成绩数据
+    sample_grades = [
+        {'student_id': '2024001', 'name': '张三', 'course_name': '高等数学', 'score': 85, 'exam_time': '2024-01-15'},
+        {'student_id': '2024001', 'name': '张三', 'course_name': '大学英语', 'score': 78, 'exam_time': '2024-01-16'},
+        {'student_id': '2024001', 'name': '张三', 'course_name': '计算机基础', 'score': 92, 'exam_time': '2024-01-17'},
+        {'student_id': '2024002', 'name': '李四', 'course_name': '高等数学', 'score': 88, 'exam_time': '2024-01-15'},
+        {'student_id': '2024002', 'name': '李四', 'course_name': '大学英语', 'score': 82, 'exam_time': '2024-01-16'},
+        {'student_id': '2024002', 'name': '李四', 'course_name': '计算机基础', 'score': 79, 'exam_time': '2024-01-17'},
+        {'student_id': '2024003', 'name': '王五', 'course_name': '高等数学', 'score': 85, 'exam_time': '2024-01-15'},
+        {'student_id': '2024003', 'name': '王五', 'course_name': '大学英语', 'score': 90, 'exam_time': '2024-01-16'},
+        {'student_id': '2024003', 'name': '王五', 'course_name': '计算机基础', 'score': 95, 'exam_time': '2024-01-17'},
+        {'student_id': '2024004', 'name': '赵六', 'course_name': '高等数学', 'score': 75, 'exam_time': '2024-01-15'},
+        {'student_id': '2024004', 'name': '赵六', 'course_name': '大学英语', 'score': 68, 'exam_time': '2024-01-16'},
+        {'student_id': '2024004', 'name': '赵六', 'course_name': '计算机基础', 'score': 72, 'exam_time': '2024-01-17'},
+        {'student_id': '2024005', 'name': '钱七', 'course_name': '高等数学', 'score': 95, 'exam_time': '2024-01-15'},
+        {'student_id': '2024005', 'name': '钱七', 'course_name': '大学英语', 'score': 91, 'exam_time': '2024-01-16'},
+        {'student_id': '2024005', 'name': '钱七', 'course_name': '计算机基础', 'score': 88, 'exam_time': '2024-01-17'},
+    ]
+    
+    for data in sample_grades:
+        grade = Grade(
+            student_id=data['student_id'],
+            name=data['name'],
+            course_name=data['course_name'],
+            score=data['score'],
+            exam_time=data['exam_time']
+        )
+        grade_mapper.insert(grade)
+    
+    logger.info(f'Initialized {len(sample_grades)} sample grades')
+
+
 def init_excel_files():
     """初始化 Excel 数据文件"""
     # 导入 mapper 会自动触发文件创建和默认用户初始化
@@ -73,6 +115,7 @@ def init_excel_files():
     from app.mappers.student_mapper import student_mapper
     from app.mappers.operation_log_mapper import operation_log_mapper
     from app.mappers.class_mapper import class_mapper
+    from app.mappers.grade_mapper import grade_mapper
     
     logger.info('Excel files initialized successfully')
     
@@ -81,7 +124,8 @@ def init_excel_files():
         ('用户数据', Config.USERS_FILE),
         ('学生数据', Config.STUDENTS_FILE),
         ('操作日志', Config.LOGS_FILE),
-        ('班级数据', Config.CLASSES_FILE)
+        ('班级数据', Config.CLASSES_FILE),
+        ('成绩数据', Config.GRADES_FILE)
     ]
     
     for name, path in files:
@@ -122,5 +166,6 @@ def init_all():
     init_data_directory()
     init_excel_files()
     init_sample_students()
+    init_sample_grades()
     init_sample_classes()
     logger.info('Data initialization completed')
