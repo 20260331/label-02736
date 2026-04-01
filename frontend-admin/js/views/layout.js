@@ -61,6 +61,18 @@ export class LayoutView {
                             </span>
                             班级管理
                         </a>
+                        <a class="nav-item ${route.startsWith('grades') ? 'active' : ''}" href="#/grades">
+                            <span class="nav-item-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10 9 9 9 8 9"/>
+                                </svg>
+                            </span>
+                            成绩管理
+                        </a>
                     </div>
                     
                     <div class="nav-footer">
@@ -146,6 +158,20 @@ export class LayoutView {
             'classes': [
                 { text: '首页', href: '#/dashboard' },
                 { text: '班级管理', active: true }
+            ],
+            'grades': [
+                { text: '首页', href: '#/dashboard' },
+                { text: '成绩管理', active: true }
+            ],
+            'grades/add': [
+                { text: '首页', href: '#/dashboard' },
+                { text: '成绩管理', href: '#/grades' },
+                { text: '添加成绩', active: true }
+            ],
+            'grades/edit': [
+                { text: '首页', href: '#/dashboard' },
+                { text: '成绩管理', href: '#/grades' },
+                { text: '编辑成绩', active: true }
             ]
         };
 
@@ -153,6 +179,9 @@ export class LayoutView {
         let key = route;
         if (route.startsWith('students/edit/')) {
             key = 'students/edit';
+        }
+        if (route.startsWith('grades/edit/')) {
+            key = 'grades/edit';
         }
 
         const items = breadcrumbs[key] || breadcrumbs['dashboard'];

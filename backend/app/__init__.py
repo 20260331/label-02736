@@ -38,10 +38,12 @@ def create_app(config_class=Config):
     from app.controllers.student_controller import student_bp
     from app.controllers.statistics_controller import statistics_bp
     from app.controllers.class_controller import class_bp
+    from app.controllers.grade_controller import grade_bp
     
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(student_bp, url_prefix='/api/students')
     app.register_blueprint(statistics_bp, url_prefix='/api/statistics')
     app.register_blueprint(class_bp, url_prefix='/api/classes')
+    app.register_blueprint(grade_bp, url_prefix='/api/grades')
     
     return app

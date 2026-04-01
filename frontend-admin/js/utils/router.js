@@ -8,6 +8,8 @@ import { DashboardView } from '../views/dashboard.js';
 import { StudentListView } from '../views/student-list.js';
 import { StudentFormView } from '../views/student-form.js';
 import { ClassListView } from '../views/class-list.js';
+import { GradeListView } from '../views/grade-list.js';
+import { GradeFormView } from '../views/grade-form.js';
 
 export class Router {
     constructor() {
@@ -88,6 +90,16 @@ export class Router {
             
             case 'classes':
                 this.currentView = new ClassListView(pageContainer);
+                break;
+            
+            case 'grades':
+                if (params[0] === 'add') {
+                    this.currentView = new GradeFormView(pageContainer);
+                } else if (params[0] === 'edit' && params[1]) {
+                    this.currentView = new GradeFormView(pageContainer, params[1]);
+                } else {
+                    this.currentView = new GradeListView(pageContainer);
+                }
                 break;
             
             default:
