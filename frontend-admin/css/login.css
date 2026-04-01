@@ -1,0 +1,120 @@
+/* 
+ * 登录页样式
+ */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    padding: 24px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-logo {
+    width: 64px;
+    height: 64px;
+    background: #36B37E;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #fff;
+}
+
+.login-logo svg {
+    width: 32px;
+    height: 32px;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #172B4D;
+    margin: 0 0 8px 0;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: #6B778C;
+    margin: 0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-form .form-group {
+    margin-bottom: 0;
+}
+
+.login-form .form-control {
+    height: 48px;
+    font-size: 15px;
+}
+
+.login-btn {
+    height: 48px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.login-footer p {
+    font-size: 12px;
+    color: #6B778C;
+    margin: 0;
+}
+
+.login-hint {
+    background: #F8F9FA;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+.login-hint-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6B778C;
+    margin: 0 0 8px 0;
+}
+
+.login-hint-item {
+    font-size: 12px;
+    color: #6B778C;
+    margin: 4px 0;
+}
+
+.login-hint-item code {
+    background: #E9ECEF;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
